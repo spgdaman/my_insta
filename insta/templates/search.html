@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if pics %}
+            <h2>Found {{ pics | length }}</h2>
+        {% else %}
+            <h2>I am sorry, we found 0 pics matching your search</h2>
+        {% endif %}
+    </div>
+
+    <div class="row">
+        {% if pics %}
+            {% for pic in pics %}
+                <div class="col-sm-12 col-md-12">
+                    <h1 class="text-center">{{pic.category_name}}</h1>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

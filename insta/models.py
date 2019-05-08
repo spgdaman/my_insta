@@ -11,7 +11,7 @@ class Image(models.Model):
     image_date = models.DateTimeField(auto_now_add=True)
     # Foreign keys
     image_location = models.ForeignKey('Location')
-    image_category = models.ForeignKey('Category')
+    image_category = models.ManyToManyField('Category')
     image_user = models.ForeignKey('User')
 
 class Location(models.Model):
@@ -19,3 +19,8 @@ class Location(models.Model):
 
 class Category(models.Model):
     category_name = models.CharField(max_length=30)
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        news = cls.objects.filter(category_name__icontains=search_term)
+        return news
