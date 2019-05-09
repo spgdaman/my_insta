@@ -15,7 +15,35 @@ class Image(models.Model):
     image_category = models.ManyToManyField('Category')
     image_user = models.ForeignKey('User')
 
+    @classmethod
+    def save_image(cls):
+        image_saved = cls.objects.save()
+        return image_saved
+
+    @classmethod
+    def delete_image(cls,image_id):
+        image_deleted = cls.objects.filter(id=image_id).delete()
+        return image_deleted
+
+    @classmethod
+    def update_image(cls,image_id,image_name):
+        image_updated = cls.objects.filter(id=image_id).update(image_name=image_name)
+        return image_updated
+
+    @classmethod
+    def get_image_by_id(cls,id):
+        get_image = cls.objects.filter(id=id)
+        return get_image
     
+    @classmethod
+    def search_image(cls,category):
+        image_searched = cls.objects.filter(image_category=category)
+        return image_searched
+
+    @classmethod
+    def filter_by_location(cls,location):
+        image_location = cls.objects.filter(image_location=location)
+        return image_location
 
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
