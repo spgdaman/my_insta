@@ -48,8 +48,38 @@ class Image(models.Model):
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
+    @classmethod
+    def save_location(cls):
+        location_saved = cls.objects.save()
+        return location_saved
+
+    @classmethod
+    def delete_location(cls,location_id):
+        location_deleted = cls.objects.filter(id=location_id).delete()
+        return location_deleted
+
+    @classmethod
+    def update_location(cls,location_id,location_name):
+        location_updated = cls.objects.filter(id=location_id).update(location_name=location_name)
+        return location_updated
+
 class Category(models.Model):
     category_name = models.CharField(max_length=30)
+
+    @classmethod
+    def save_category(cls):
+        category_saved = cls.objects.save()
+        return category_saved
+
+    @classmethod
+    def delete_category(cls,image_id):
+        category_deleted = cls.objects.filter(id=category_id).delete()
+        return category_deleted
+
+    @classmethod
+    def update_category(cls,category_id,category_name):
+        category_updated = cls.objects.filter(id=category_id).update(category_name=category_name)
+        return category_updated
 
     @classmethod
     def search_by_category(cls,search_term):
