@@ -6,14 +6,14 @@
             <!-- Images in cards -->
             {% for image in all_images%}
             <div class="card col-md-3 col-lg-3" style="font-family: 'Open Sans', sans-serif;">
-                <a id="link" href="{% url 'show_image' image.id %}"><img src="{{image.image.url}}" class="card-img-top" alt="{{image.image_name}}"></a>
+                <a id="link" href="{% url 'show_image' image.id %}"><img src="{{image.image.url}}" class="card-img-top" alt="127.0.0.1:8000/image/{{image.id}}"></a>
                 <div class="card-body">
                     <p class="card-text">{{image.image_description}}</p>
                     <div class="container">
                         <div class="row">
                             <button type="button" class="btn btn-sm btn-primary col-lg-4 col-sm-4" data-toggle="modal" data-target="#displayModal">Details</button>
                             <div class="col-lg-4 col-sm-4"></div>
-                            <a data-toggle="tooltip" data-placement="top" title="Click to copy link" class="btn btn-sm btn-success col-lg-4 col-sm-4" href="#" onclick="myFunction()">Copy Link</a>
+                            <button data-toggle="tooltip" data-placement="top" title="Click to copy link" class="btn btn-sm btn-success col-lg-4 col-sm-4" onclick="myFunction()" data-clipboard-target="#link">Copy Link</button>
                         </div>
                     </div>
                 </div>

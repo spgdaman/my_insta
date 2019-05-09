@@ -9,25 +9,11 @@
         {% bootstrap_messages %}
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'js/scripts.js' %">
     </head>
     <body style="font-family: 'Pacifico', cursive;">
         {% block scripts %}
             {% bootstrap_javascript jquery='full' %}
-            <script>
-            function myFunction() {
-                /* Get the text field */
-                var copyText = document.getElementById("link");
-
-                /* Select the text field */
-                copyText.select();
-
-                /* Copy the text inside the text field */
-                document.execCommand("copy");
-
-                /* Alert the copied text */
-                alert("Copied the text: " + copyText.value);
-            }
-            </script>
         {% endblock %}
 
         {% include 'navbar.html' %}
@@ -35,5 +21,16 @@
         {% block content %}
 
         {% endblock %}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        <script>
+            var clipboard = new ClipboardJS('.btn-success');
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+        </script>
     </body>
 </html>
