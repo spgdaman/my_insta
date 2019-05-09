@@ -5,12 +5,42 @@
         <div class="row">
             <!-- Images in cards -->
             {% for image in all_images%}
-            <div class="card col-xs-12 col-sm-12 col-md-3 col-lg-3" style="font-family: 'Open Sans', sans-serif;">
-                <a href="{% url 'show_image' image.id %}"><img src="{{image.image.url}}" class="card-img-top" alt="{{image.image_name}}"></a>
+            <div class="card col-md-3 col-lg-3" style="font-family: 'Open Sans', sans-serif;">
+                <a id="link" href="{% url 'show_image' image.id %}"><img src="{{image.image.url}}" class="card-img-top" alt="{{image.image_name}}"></a>
                 <div class="card-body">
                     <p class="card-text">{{image.image_description}}</p>
+                    <div class="container">
+                        <div class="row">
+                            <button type="button" class="btn btn-sm btn-primary col-lg-4 col-sm-4" data-toggle="modal" data-target="#displayModal">Details</button>
+                            <div class="col-lg-4 col-sm-4"></div>
+                            <a data-toggle="tooltip" data-placement="top" title="Click to copy link" class="btn btn-sm btn-success col-lg-4 col-sm-4" href="#" onclick="myFunction()">Copy Link</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Modal goes here -->
+            <div class="modal fade" id="displayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Open Sans', sans-serif;">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalLabel">{{image.image_name}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="padding:0;">
+                            <img src="{{image.image.url}}" class="card-img-top" alt="{{image.image_name}}">
+                            <p class="card-text">{{image.image_description}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal ends here -->
+
             {% endfor %}
         </div>
     </div>

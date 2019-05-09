@@ -4,9 +4,17 @@
     <div class="row">
         {% if images %}
             {% for image in images %}
-                <div class="col-sm-12 col-md-12 col-lg-12">
+                <!-- <div class="col-sm-12 col-md-12 col-lg-12">
                     <img class="img-responsive" src="{{image.image.url}}" alt="{{image.image_name.url}}">
                     <p>{{image.image_description}}</p>
+                </div> -->
+                <div class="card mb-3 col-sm-12 col-md-12 col-lg-12">
+                    <img class="card-img-top img-responsive" src="{{image.image.url}}" alt="{{image.image_name.url}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{image.image_name}}</h5>
+                        <p class="card-text">{{image.image_description}}</p>
+                        <p class="card-text"><small class="text-muted">First posted {{image.image_date}} ago.</small></p>
+                    </div>
                 </div>
             {% endfor %}
         {% endif %}

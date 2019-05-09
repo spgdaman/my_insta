@@ -15,6 +15,8 @@ class Image(models.Model):
     image_category = models.ManyToManyField('Category')
     image_user = models.ForeignKey('User')
 
+    
+
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
