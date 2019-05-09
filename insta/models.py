@@ -15,13 +15,13 @@ class Image(models.Model):
     image_category = models.ManyToManyField('Category')
     image_user = models.ForeignKey('User')
 
-    @classmethod
-    def search_by_category(cls,search_term):
-        image_search = cls.objects.filter(image_category__icontains=search_term)
-        return image_search
-
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
 class Category(models.Model):
     category_name = models.CharField(max_length=30)
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        category_search = cls.objects.filter(category_name__icontains=search_term)
+        return category_search
