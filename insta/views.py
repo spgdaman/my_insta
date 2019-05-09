@@ -3,7 +3,8 @@ from django.http import HttpResponse, Http404
 from .models import Category,Location,Image,User
 
 def main(request):
-    return render(request, 'index.html')
+    all_images = Image.objects.all()
+    return render(request, 'index.html',{"all_images":all_images})
 
 def search_results(request):
     if 'category' in request.GET and request.GET['category']:
