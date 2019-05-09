@@ -6,6 +6,7 @@ class User(models.Model):
     email = models.EmailField()
 
 class Image(models.Model):
+    image = models.ImageField(upload_to='images/')
     image_name = models.CharField(max_length=60)
     image_description = models.CharField(max_length=255)
     image_date = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if images %}
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <img class="img-responsive" src="{{image.image.url}}" alt="{{image.image_name.url}}">
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

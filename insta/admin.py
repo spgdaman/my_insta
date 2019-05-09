@@ -1,5 +1,5 @@
 from django.contrib import admin
-import .models
+from .models import User,Image,Location,Category
 
 admin.site.register(User)
 admin.site.register(Image)

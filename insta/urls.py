@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.main, name="index"),
     url(r'^search/$', views.search_results,name='search_results'),
+    url(r'^image/(\d+)', views.show_image, name='show_image'),
 ]
