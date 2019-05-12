@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^search/$', views.search_results,name='search_results'),
     url(r'^image/(\d+)', views.show_image, name='show_image'),
     url(r'^show_post_category/(\d+)', views.show_post_category, name='show_post_category'),
+    url(r'^show_locations/$', views.show_locations, name="show_locations"),
+    url(r'^display_location/(\d+)', views.display_location, name="display_location"),
 ]
 
 if settings.DEBUG:

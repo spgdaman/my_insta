@@ -6,7 +6,7 @@ class Image(models.Model):
     image_description = models.CharField(max_length=255)
     image_date = models.DateTimeField(auto_now_add=True)
     # Foreign keys
-    image_location = models.ForeignKey('Location')
+    image_location = models.ManyToManyField('Location')
     image_category = models.ManyToManyField('Category')
 
     @classmethod

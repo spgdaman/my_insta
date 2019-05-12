@@ -10,10 +10,10 @@
                 </div> -->
                 <div class="card mb-3 col-sm-12 col-md-12 col-lg-12">
                     <img class="card-img-top img-responsive" src="{{image.image.url}}" alt="{{image.image_name.url}}">
-                    <div class="card-body">
+                    <div class="card-body" style="font-family: 'Open Sans', sans-serif;">
                         <h5 class="card-title">{{image.image_name}}</h5>
                         <p class="card-text">{{image.image_description}}</p>
-                        <p class="card-text"><small class="text-muted">First posted {{image.image_date}} ago.</small></p>
+                        <p class="card-text"><small class="text-muted">First posted {{image.image_date|timesince}} ago, on date {{image.image_date | date:"dS M, Y "}}.</small></p>
                     </div>
                 </div>
             {% endfor %}

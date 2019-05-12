@@ -5,14 +5,14 @@
     <div class="row">
         <!-- Category searched for appears here -->
         {% for item in category %}
-            <h1>Posts in category {{item.category_name}}</h1>
+            <h1  class="text-center" style="font-family: 'Open Sans', sans-serif;">Posts in category {{item.category_name}}</h1>
         {% endfor %}
     </div>
     
     <!-- Posts per category come down here -->
     {% for post in posts %}
         <div class="row">
-        <h5><a href="{% url 'show_image' post.id %}">{{post.image_name}}</a></h5>
+            <a class="text-center" href="{% url 'show_image' post.id %}"><h5 style="font-family: 'Open Sans', sans-serif;">{{post.image_name}}</h5></a>
         </div>
     {% endfor %}
 </div>

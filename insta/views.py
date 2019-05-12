@@ -31,3 +31,13 @@ def show_post_category(request,category_id):
 
     return render(request, 'showpostcategory.html', {"posts":posts,"category": category})
 
+def show_locations(request):
+    locations = Location.objects.all()
+
+    return render(request,'showlocations.html', {"locations":locations})
+
+def display_location(request,location_id):
+    locations = Location.objects.filter(id=location_id)
+    posts = Image.objects.filter(image_location=location_id)
+
+    return render(request, 'display_location.html', {"locations":locations,"posts":posts})
