@@ -6,21 +6,21 @@
             <!-- Images in cards -->
             {% for image in all_images%}
             <div class="card col-md-3 col-lg-3" style="font-family: 'Open Sans', sans-serif;">
-                <a id="link" href="{% url 'show_image' image.id %}"><img src="{{image.image.url}}" class="card-img-top" alt="127.0.0.1:8000/image/{{image.id}}"></a>
+                <a id="link{{image.id}}" href="{% url 'show_image' image.id %}"><img src="{{image.image.url}}" class="card-img-top" alt="127.0.0.1:8000/image/{{image.id}}" style="height: 250px;"></a>
                 <div class="card-body">
                     <p class="card-text">{{image.image_description}}</p>
                     <div class="container">
                         <div class="row">
-                            <button type="button" class="btn btn-sm btn-primary col-lg-4 col-sm-4" data-toggle="modal" data-target="#displayModal">Details</button>
+                            <button type="button" class="btn btn-sm btn-primary col-lg-4 col-sm-4" data-toggle="modal" data-target="#displayModal{{image.id}}">Details</button>
                             <div class="col-lg-4 col-sm-4"></div>
-                            <button data-toggle="tooltip" data-placement="top" title="Click to copy link" class="btn btn-sm btn-success col-lg-4 col-sm-4" onclick="myFunction()" data-clipboard-target="#link">Copy Link</button>
+                            <button data-toggle="tooltip" data-placement="top" title="Click to copy link" class="btn btn-sm btn-success col-lg-4 col-sm-4" onclick="myFunction()" data-clipboard-target="#link{{image.id}}">Copy Link</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Modal goes here -->
-            <div class="modal fade" id="displayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Open Sans', sans-serif;">
+            <div class="modal fade" id="displayModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Open Sans', sans-serif;">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">

@@ -13,7 +13,7 @@
         {% if pics %}
             {% for pic in pics %}
                 <div class="col-sm-12 col-md-12">
-                    <h1 class="text-center">{{pic.category_name}}</h1>
+                    <a href="{% url 'show_post_category' pic.id %}"><h1 class="text-center">{{pic.category_name}}</h1></a>
                 </div>
             {% endfor %}
         {% endif %}

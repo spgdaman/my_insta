@@ -24,3 +24,10 @@ def show_image(request,image_id):
         raise Http404
     return render(request,'show_image.html', {"images":image})
 
+def show_post_category(request,category_id):
+    category = Category.objects.filter(id=category_id)
+    posts = Image.objects.filter(image_category=category_id)
+    # posts = Image.objects.filter(image_category=category.id)
+
+    return render(request, 'showpostcategory.html', {"posts":posts,"category": category})
+
