@@ -1,15 +1,10 @@
 # Pitch App
 
-The project is about a blog where the user gets to do the following:
-* View the blog posts on the site
-* Comment on blog posts
-* view the most recent posts
-* Email alert when a new post is made by joining a subscription.
-* See random quotes on the site
-* Sign in to the blog.
-* Create a blog from the application.
-* Delete comments that I find insulting or degrading.
-* Update or delete blogs I have created.
+The project is about a photo gallery, where the user gets to do the following:
+* View photos uploaded with their description and location.
+* Users are able to sign up and sign in to upload photos.
+* Search for photos based on categories.
+* Update or Delete photos.
 
 ## Installation
 
@@ -17,12 +12,11 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the pyt
 
 ## Requirements/Dependencies
 
-Django==1.11
-django-bootstrap3==11.0.0
-django-bootstrap4==0.0.8
-Pillow==6.0.0
-psycopg2==2.8.2
-pytz==2019.1
+* Django==1.11
+* django-bootstrap4==0.0.8
+* Pillow==6.0.0
+* psycopg2==2.8.2
+* pytz==2019.1
 
 ## Author Information
 
