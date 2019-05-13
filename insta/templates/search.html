@@ -3,9 +3,9 @@
 <div class="container">
     <div class="row">
         {% if pics %}
-            <h2 style="font-family: 'Open Sans', sans-serif;">Found {{ pics | length }} search result</h2>
+            <h2 class="mx-auto" style="font-family: 'Open Sans', sans-serif;">Found {{ pics | length }} search result</h2>
         {% else %}
-            <h2 style="font-family: 'Open Sans', sans-serif;">I am sorry, we found 0 pics matching your search</h2>
+            <h2 class="mx-auto" style="font-family: 'Open Sans', sans-serif;">I am sorry, we found 0 pics matching your search</h2>
         {% endif %}
     </div>
 
@@ -13,7 +13,7 @@
         {% if pics %}
             {% for pic in pics %}
                 <div class="col-sm-12 col-md-12">
-                    <a href="{% url 'show_post_category' pic.id %}"><h1 class="text-center" style="font-family: 'Open Sans', sans-serif;">{{pic.category_name}}</h1></a>
+                    <a href="{% url 'show_post_category' pic.id %}"><h5 class="text-center" style="font-family: 'Open Sans', sans-serif;">{{pic.category_name}}</h5></a>
                 </div>
             {% endfor %}
         {% endif %}

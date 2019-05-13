@@ -33,6 +33,14 @@
                             <div class="modal-body" style="padding:0;">
                                 <img src="{{image.image.url}}" class="card-img-top" alt="{{image.image_name}}">
                                 <p class="card-text px-2 py-3">{{image.image_description}}</p>
+                                <ul class="list-group list-group-flush">
+                                    <h5 class="px-2 py-1">Locations</h5>
+                                    {% if image %}
+                                    <li class="list-group-item">{{image.location_name}}</li>
+                                    {% elif image.image_location == insta.Location.None%}
+                                    <li class="list-group-item">Location is not set</li>
+                                    {% endif %}
+                                </ul>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
