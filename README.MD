@@ -1,4 +1,4 @@
-# Pitch App
+# Photo Gallery
 
 The project is about a photo gallery, where the user gets to do the following:
 * View photos uploaded with their description and location.
